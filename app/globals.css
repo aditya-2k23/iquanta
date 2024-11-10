@@ -14,12 +14,12 @@ body {
 }
 
 .menu-item a {
-    font-family: "Montserrat", sans-serif !important;
+    font-family: "Montserrat", sans-serif;
     color: #7A7A7A;
     font-size: 15px;
     font-weight: 700;
     text-transform: none;
-    line-height: 1.4 !important;
+    line-height: 1.4;
 }
 
 .submenu {
@@ -32,7 +32,9 @@ body {
 }
 
 .subMenu-links {
+    font-family: sans-serif !important;
     font-size: 13px !important;
+    font-weight: 600 !important;
 }
 
 .subMenu-links:hover {
