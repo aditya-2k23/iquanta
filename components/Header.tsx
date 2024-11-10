@@ -7,59 +7,44 @@ const Header = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
-    <header className="relative w-full p-4">
-      {/* Mobile Search Button */}
-      <div className="flex justify-end md:hidden">
-        <button
-          onClick={() => setIsSearchOpen(!isSearchOpen)}
-          className="text-gray-500 hover:text-gray-800 focus:outline-none"
-        >
-          <i className="fas fa-search"></i>
-        </button>
-      </div>
-
+    <header className="relative bg-white w-full p-7">
       {/* Navigation Menu */}
-      <Navbar />
-
-      {/* Search Overlay */}
-      {isSearchOpen && (
-        <div className="absolute top-0 left-0 z-20 w-full h-screen bg-gray-900 bg-opacity-50 flex justify-center items-center">
-          <div className="p-6 rounded-lg shadow-lg max-w-sm w-full">
-            {/* Close Button */}
-            <button
-              onClick={() => setIsSearchOpen(false)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
-            >
-              ✖️
-            </button>
-
-            {/* Search Form */}
-            <form
-              method="get"
-              action="https://www.iquanta.in/blog/"
-              className="flex flex-col"
-            >
-              <label htmlFor="search" className="text-lg font-semibold mb-2">
-                Search
-              </label>
-              <input
-                id="search"
-                type="text"
-                name="s"
-                autoComplete="off"
-                placeholder="Search..."
-                className="border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <button
-                type="submit"
-                className="mt-4 bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600"
-              >
-                Search
-              </button>
-            </form>
-          </div>
+      <Navbar>
+        <div className="flex justify-end">
+          <button
+            onClick={() => setIsSearchOpen(!isSearchOpen)}
+            className="text-[#e04040] focus:outline-none"
+          >
+            <i className="fas fa-search"></i>
+          </button>
         </div>
-      )}
+
+        {/* Search Overlay */}
+        {isSearchOpen && (
+          <>
+            <div className=""></div>
+            <div className="absolute z-20 bg-white border-t-2 border-[#e04040] p-3 shadow-xl">
+              <form
+                method="get"
+                action="https://www.iquanta.in/blog/"
+                className="flex items-center"
+              >
+                <input
+                  type="text"
+                  autoComplete="off"
+                  className="border border-gray-300 py-2 px-3 h-full focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  className="bg-black text-white px-4 py-2 text-sm hover:bg-[#e04040] focus:outline-none"
+                >
+                  Search
+                </button>
+              </form>
+            </div>
+          </>
+        )}
+      </Navbar>
     </header>
   );
 };
