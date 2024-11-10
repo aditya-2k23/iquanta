@@ -1,7 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* components/Header.tsx */
+.menu-item:hover .submenu {
+    display: block;
+}
+
+.menu-item a {
+    font-family: "Montserrat", sans-serif !important;
+    color: #7A7A7A;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: none;
+    line-height: 1.4 !important;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    list-style: none;
+    padding: 8px;
+    z-index: 10;
+}
+
+.subMenu-links {
+    font-size: 13px !important;
+}
+
+.subMenu-links:hover {
+    color: #e04040;
 }
