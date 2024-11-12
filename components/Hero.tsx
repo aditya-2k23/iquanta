@@ -1,4 +1,5 @@
 import React from "react";
+import TopPosts from "./TopPosts";
 
 const Hero = () => {
   const articles = [
@@ -68,8 +69,41 @@ const Hero = () => {
     },
   ];
 
+  const topPosts = [
+    {
+      title: "How Karan Converted FMS Delhi with Less Than 60% in Graduation",
+      link: "https://www.iquanta.in/blog/karan-converted-fms-delhi-with-less-than-60-in-graduation/",
+      imgUrl: "/WhatsApp-Image-2024-11-11-at-12.45.33-PM-1-696x392.jpeg",
+      category: "| CAT & Non-CAT |",
+    },
+    {
+      title: "How Karan Converted FMS Delhi with Less Than 60% in Graduation",
+      link: "https://www.iquanta.in/blog/karan-converted-fms-delhi-with-less-than-60-in-graduation/",
+      imgUrl: "/WhatsApp-Image-2024-11-11-at-12.45.33-PM-1-696x392.jpeg",
+      category: "| CAT & Non-CAT |",
+    },
+    {
+      title: "How Karan Converted FMS Delhi with Less Than 60% in Graduation",
+      link: "https://www.iquanta.in/blog/karan-converted-fms-delhi-with-less-than-60-in-graduation/",
+      imgUrl: "/WhatsApp-Image-2024-11-11-at-12.45.33-PM-1-696x392.jpeg",
+      category: "| CAT & Non-CAT |",
+    },
+    {
+      title: "How Karan Converted FMS Delhi with Less Than 60% in Graduation",
+      link: "https://www.iquanta.in/blog/karan-converted-fms-delhi-with-less-than-60-in-graduation/",
+      imgUrl: "/WhatsApp-Image-2024-11-11-at-12.45.33-PM-1-696x392.jpeg",
+      category: "| CAT & Non-CAT |",
+    },
+    {
+      title: "How Karan Converted FMS Delhi with Less Than 60% in Graduation",
+      link: "https://www.iquanta.in/blog/karan-converted-fms-delhi-with-less-than-60-in-graduation/",
+      imgUrl: "/WhatsApp-Image-2024-11-11-at-12.45.33-PM-1-696x392.jpeg",
+      category: "| CAT & Non-CAT |",
+    },
+  ];
+
   return (
-    <section className="bg-gray-100 border-t border-b mt-16 border-black px-10 py-12">
+    <section className="bg-gray-100 border-t mt-16 border-black px-10 py-12">
       <div className="container mx-auto px-4 mt-8">
         {/* Original Articles */}
         <div className="grid md:grid-cols-3 gap-8 cursor-pointer">
@@ -139,6 +173,25 @@ const Hero = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Top Posts */}
+      <div className="flex mt-8">
+        <div className="container flex-1 mx-auto px-4">
+          <h2 className="text-2xl bg-red-500 p-3 italic text-white font-bold uppercase text-center mb-4">
+            Top 5 This Week
+          </h2>
+          <div className="flex flex-col gap-2">
+            {topPosts.map((post, index) => (
+              <div key={index}>
+                <TopPosts {...post} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex-1 text-center border border-red-500">Hello</div>
+        <div className="flex-1 text-center border border-red-500">Hello</div>
       </div>
     </section>
   );
