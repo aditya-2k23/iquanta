@@ -1,5 +1,6 @@
 import React from "react";
 import TopPosts from "./TopPosts";
+import BlogPosts from "./BlogPosts";
 
 const Hero = () => {
   const articles = [
@@ -77,27 +78,28 @@ const Hero = () => {
       category: "| CAT & Non-CAT |",
     },
     {
-      title: "How Karan Converted FMS Delhi with Less Than 60% in Graduation",
-      link: "https://www.iquanta.in/blog/karan-converted-fms-delhi-with-less-than-60-in-graduation/",
-      imgUrl: "/WhatsApp-Image-2024-11-11-at-12.45.33-PM-1-696x392.jpeg",
+      title: "How Karal Went From CAT 83%ile to 99.03%ile",
+      link: "https://www.iquanta.in/blog/how-karal-went-from-cat-83ile-to-99-03ile/",
+      imgUrl: "/WhatsApp-Image-2024-11-08-at-3.47.41-PM-1-696x392.jpeg",
       category: "| CAT & Non-CAT |",
     },
     {
-      title: "How Karan Converted FMS Delhi with Less Than 60% in Graduation",
-      link: "https://www.iquanta.in/blog/karan-converted-fms-delhi-with-less-than-60-in-graduation/",
-      imgUrl: "/WhatsApp-Image-2024-11-11-at-12.45.33-PM-1-696x392.jpeg",
+      title:
+        "FMS Delhi Student, CAT 99.11%iler Shares His CAT Preparation Journey",
+      link: "https://www.iquanta.in/blog/fms-delhi-student-shares-cat-preparation-journey/",
+      imgUrl: "/WhatsApp-Image-2024-02-09-at-17.38.57-1-696x392.jpeg",
+      category: "| CAT EXAM |",
+    },
+    {
+      title: "How Rushikesh Converted IIM Bangalore in his First Attempt",
+      link: "https://www.iquanta.in/blog/how-rushikesh-converted-iim-bangalore/",
+      imgUrl: "/AvDNi1DvEOs-HD-1-1-696x392.jpg",
       category: "| CAT & Non-CAT |",
     },
     {
-      title: "How Karan Converted FMS Delhi with Less Than 60% in Graduation",
-      link: "https://www.iquanta.in/blog/karan-converted-fms-delhi-with-less-than-60-in-graduation/",
-      imgUrl: "/WhatsApp-Image-2024-11-11-at-12.45.33-PM-1-696x392.jpeg",
-      category: "| CAT & Non-CAT |",
-    },
-    {
-      title: "How Karan Converted FMS Delhi with Less Than 60% in Graduation",
-      link: "https://www.iquanta.in/blog/karan-converted-fms-delhi-with-less-than-60-in-graduation/",
-      imgUrl: "/WhatsApp-Image-2024-11-11-at-12.45.33-PM-1-696x392.jpeg",
+      title: "How 99.83%iler Rishav Converted IIM ABC With Job",
+      link: "https://www.iquanta.in/blog/how-99-83iler-rishav-converted-iim-abc-with-job/",
+      imgUrl: "/WhatsApp-Image-2024-10-29-at-3.17.13-PM-1-696x392.jpeg",
       category: "| CAT & Non-CAT |",
     },
   ];
@@ -178,10 +180,10 @@ const Hero = () => {
       {/* Top Posts */}
       <div className="flex mt-8">
         <div className="container flex-1 mx-auto px-4">
-          <h2 className="text-2xl bg-red-500 p-3 italic text-white font-bold uppercase text-center mb-4">
+          <h2 className="text-2xl bg-red-500 p-3 italic text-white font-extrabold uppercase text-center mb-2">
             Top 5 This Week
           </h2>
-          <div className="flex flex-col gap-2">
+          <div className="flex border-b flex-col gap-2">
             {topPosts.map((post, index) => (
               <div key={index}>
                 <TopPosts {...post} />
@@ -190,8 +192,12 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flex-1 text-center border border-red-500">Hello</div>
-        <div className="flex-1 text-center border border-red-500">Hello</div>
+        <div className="flex-1 text-center border border-red-500">
+            Hello
+        </div>
+        <div className="flex-1 border border-red-500">
+          <BlogPosts />
+        </div>
       </div>
     </section>
   );
