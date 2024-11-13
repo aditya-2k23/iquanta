@@ -1,6 +1,7 @@
 import React from "react";
 import TopPosts from "./TopPosts";
 import BlogPosts from "./BlogPosts";
+import HeroSectionCard from "./HeroSectionCard";
 
 const Hero = () => {
   const articles = [
@@ -179,7 +180,7 @@ const Hero = () => {
 
       {/* Top Posts */}
       <div className="flex mt-8">
-        <div className="container flex-1 mx-auto px-4">
+        <div className="container flex-shrink flex-1 mx-auto px-4">
           <h2 className="text-2xl bg-red-500 p-3 italic text-white font-extrabold uppercase text-center mb-2">
             Top 5 This Week
           </h2>
@@ -192,10 +193,10 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flex-1 text-center border border-red-500">
-            Hello
+        <div className="flex-1">
+          <HeroSectionCard />
         </div>
-        <div className="flex-1 border border-red-500">
+        <div className="flex-1 flex-shrink">
           <BlogPosts />
         </div>
       </div>
