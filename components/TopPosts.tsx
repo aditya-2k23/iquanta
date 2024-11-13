@@ -9,25 +9,27 @@ interface PostProps {
 
 const TopPosts: React.FC<PostProps> = ({ title, link, imgUrl, category }) => {
   return (
-    <div className="bg-gray-50 w-72 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        <div
-          className="h-24 w-36 bg-cover bg-center"
-          style={{ backgroundImage: `url(${imgUrl})` }}
-        ></div>
-      </a>
-      <div className="p-4">
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-lg font-bold hover:text-red-600"
-        >
-          {title}
-        </a>
-        <div className="mt-2 text-sm text-gray-600">
-          <span>{category}</span>
-        </div>
+    <div className="w-full h-28 mb-5 p-2">
+      <div className="flex items-center justify-center gap-2">
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <div
+              className="h-28 w-28 bg-cover bg-center"
+              style={{ backgroundImage: `url(${imgUrl})` }}
+            ></div>
+          </a>
+          <div className="ml-1">
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl font-bold hover:text-red-600"
+            >
+              {title}
+            </a>
+            <div className="mt-2 text-sm font-semibold text-red-600">
+              <span>{category}</span>
+            </div>
+          </div>
       </div>
     </div>
   );
