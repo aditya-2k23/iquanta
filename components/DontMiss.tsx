@@ -35,7 +35,7 @@ const Article = ({
       {/* Content Section */}
       <div className="p-5 text-center">
         {/* Title */}
-        <h3 className="text-lg sm:text-xl font-semibold mb-3 hover:text-red-600 transition-colors duration-200">
+        <h3 className="text-lg sm:text-xl font-bold mb-3 hover:text-red-600 transition-colors duration-200">
           <a href={href} rel="bookmark" title={title}>
             {title}
           </a>
