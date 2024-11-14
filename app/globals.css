@@ -1,42 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* components/Header.tsx */
 .menu-item:hover .submenu {
-    display: block;
+  display: block;
 }
 
 .menu-item a {
-    font-family: "Montserrat", sans-serif;
-    color: #7A7A7A;
-    font-size: 15px;
-    font-weight: 700;
-    text-transform: none;
-    line-height: 1.4;
+  font-family: "Montserrat", sans-serif;
+  color: #7a7a7a;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: none;
+  line-height: 1.4;
 }
 
 .submenu {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    list-style: none;
-    padding: 8px;
-    z-index: 10;
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  list-style: none;
+  padding: 8px;
+  z-index: 10;
 }
 
 .subMenu-links {
-    font-family: sans-serif !important;
-    font-size: 13px !important;
-    font-weight: 600 !important;
+  font-family: sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
 }
 
 .subMenu-links:hover {
-    color: #e04040;
+  color: #e04040;
+}
+
+#tdi_102 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.article {
+  display: flex;
+  overflow: hidden;
+}
+
+.details {
+  font-size: 16px;
 }
