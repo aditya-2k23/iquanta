@@ -1,4 +1,5 @@
 import DontMiss from "@/components/DontMiss";
+import Exams from "@/components/Exams";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 
@@ -8,6 +9,7 @@ export default function Home() {
       <Header />
       <Hero />
       <DontMiss />
+      <Exams />
     </div>
   );
 }
