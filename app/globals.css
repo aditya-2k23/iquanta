@@ -55,3 +55,30 @@ body {
 .details {
   font-size: 16px;
 }
+
+/* make the checkmark inside the checkbox red and square shaped instead of a tick */
+.form-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  vertical-align: middle;
+  background-origin: border-box;
+  user-select: none;
+  flex-shrink: 0;
+  border-radius: 0.25rem;
+  height: 1rem;
+  width: 1rem;
+  color: #e04040;
+  border: 1px solid #000;
+  transition: all 0.3s;
+}
+
+/* make the checkmark inside the checkbox red and square shaped instead of a tick a little smaller than the actual box */
+
+.form-checkbox:checked {
+  background-color: #e04040;
+  border-color: #e04040;
+  width: 0.75rem;
+  height: 0.75rem;
+}
