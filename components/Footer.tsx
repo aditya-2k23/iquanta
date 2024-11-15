@@ -27,6 +27,28 @@ const Article = ({
   </div>
 );
 
+const SocialLink = ({
+  href,
+  title,
+  icon,
+  color,
+}: {
+  href: string;
+  title: string;
+  icon: string;
+  color: string;
+}) => (
+  <a
+    href={href}
+    title={title}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={`hover:text-${color} bg-red-500 text-center text-lg mt-4 px-[14px] transition-all delay-100 py-[10px] hover:bg-red-300 text-white`}
+  >
+    <i className={`fab fa-${icon}`}></i>
+  </a>
+);
+
 const Footer = () => {
   return (
     <footer className="border-t mt-10 border-black pt-10 pb-5 px-16">
@@ -40,33 +62,24 @@ const Footer = () => {
               76830 43155
             </p>
             <div className="flex space-x-4">
-              <a
-                href="https://facebook.com/iquanta.in"
+              <SocialLink
+                href="https://www.facebook.com/iquanta.in/"
                 title="Facebook"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-blue-600"
-              >
-                <i className="fab fa-facebook"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/iquanta.in/"
+                icon="facebook"
+                color="blue-500"
+              />
+              <SocialLink
+                href="https://www.instagram.com/iquanta/"
                 title="Instagram"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-pink-500"
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a
-                href="https://www.youtube.com/channel/UCJcXnTkWeIrXavsa_DUzq5w"
-                title="YouTube"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-red-600"
-              >
-                <i className="fab fa-youtube"></i>
-              </a>
+                icon="instagram"
+                color="pink-500"
+              />
+              <SocialLink
+                href="https://www.youtube.com/c/iquanta"
+                title="Youtube"
+                icon="youtube"
+                color="red-500"
+              />
             </div>
           </div>
 
