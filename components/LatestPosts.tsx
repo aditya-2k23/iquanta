@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import "../app/globals.css";
 import RedNewsletterForm from "./RedNewsletterForm";
@@ -154,24 +153,24 @@ const LatestPosts = () => {
   ];
 
   return (
-    <div className="flex px-8 gap-5 justify-between mx-auto">
-      <div className="flex gap-[18px] items-start">
-        <div id="tdi_102" className="w-[99%]">
+    <div className="flex flex-col lg:flex-row px-8 md:px-10 gap-5 justify-between mx-auto">
+      <div className="flex flex-col lg:flex-row gap-5">
+        <div id="tdi_102" className="w-full lg:w-[99%]">
           {articles.map((article, index) => (
-            <div key={index} className="flex border-b border-black pb-[21px] items-center">
+            <div
+              key={index}
+              className="flex flex-col lg:flex-row border-b border-black pb-4 lg:pb-[21px] items-center mb-2 md:mb-0"
+            >
               <div className="flex-shrink-0 flex items-center justify-center">
                 <a href={article.url} target="_blank" rel="noopener noreferrer">
-                  <Image
-                    src={article.imgUrl}
-                    alt={article.title}
-                    width={330}
-                    height={330}
-                    className="mr-1 bg-cover bg-center"
+                  <div
+                    className="w-96 h-60 bg-cover bg-center mr-1"
+                    style={{ backgroundImage: `url(${article.imgUrl})` }}
                   />
                 </a>
               </div>
-              <div className="flex flex-col justify-between ml-2 gap-3">
-                <h3 className="hover:text-red-500 text-2xl font-bold">
+              <div className="flex flex-col justify-between mt-4 px-4 md:px-0 lg:mt-0 ml-0 lg:ml-2 gap-3">
+                <h3 className="hover:text-red-500 text-2xl leading-[26px] font-bold">
                   <a
                     href={article.url}
                     target="_blank"
@@ -181,7 +180,7 @@ const LatestPosts = () => {
                   </a>
                 </h3>
                 <div className="details">
-                  <span className="font-semibold text-red-500 mr-[10px] hover:text-red-600 cursor-pointer uppercase">
+                  <span className="font-semibold text-red-500 mr-2 lg:mr-[10px] hover:text-red-600 cursor-pointer uppercase">
                     | {article.category} |
                   </span>
                   <span className="text-gray-700">{article.date}</span>
@@ -191,7 +190,7 @@ const LatestPosts = () => {
           ))}
         </div>
       </div>
-      <div className="flex-shrink-0 border-l border-black border-r w-[360.58px] text-center">
+      <div className="flex-shrink-0 border-l border-black border-r w-full lg:w-[360.58px] text-center mt-4 lg:mt-0">
         <div className="">
           {blogData.map((post, index) => (
             <BlogPost
@@ -207,7 +206,7 @@ const LatestPosts = () => {
           ))}
         </div>
       </div>
-      <div className="flex-shrink-0 w-[285.91px]">
+      <div className="flex-shrink-0 w-full lg:w-[285.91px] mt-4 lg:mt-0">
         <RedNewsletterForm />
       </div>
     </div>
