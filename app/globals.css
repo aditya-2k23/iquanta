@@ -22,6 +22,16 @@ body {
   line-height: 1.4;
 }
 
+.menu-item {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .submenu {
+    display: none;
+  }
+}
+
 .submenu {
   display: none;
   position: absolute;
@@ -35,6 +45,7 @@ body {
   font-family: sans-serif !important;
   font-size: 13px !important;
   font-weight: 600 !important;
+  line-height: 0.5 !important;
 }
 
 .subMenu-links:hover {
