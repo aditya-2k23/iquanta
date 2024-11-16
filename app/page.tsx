@@ -7,7 +7,7 @@ import LatestPosts from "@/components/LatestPosts";
 
 export default function Home() {
   return (
-    <div className="container h-screen mx-auto bg-[#ededed]">
+    <div className="container overflow-x-hidden h-screen mx-auto bg-[#ededed]">
       <Header />
       <Hero />
       <DontMiss />
