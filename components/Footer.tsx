@@ -43,7 +43,7 @@ const SocialLink = ({
     title={title}
     target="_blank"
     rel="noopener noreferrer"
-    className={`hover:text-${color} bg-red-500 text-center text-lg mt-4 px-[14px] transition-all delay-100 py-[10px] hover:bg-red-300 text-white`}
+    className={`hover:text-${color} bg-red-500 text-center text-lg mt-4 px-[14px] transition-all py-[10px] hover:bg-[#f87171ad] hover:rounded-full text-white`}
   >
     <i className={`fab fa-${icon}`}></i>
   </a>
