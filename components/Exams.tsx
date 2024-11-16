@@ -4,7 +4,7 @@ import BlogList from "./BlogList";
 
 const Exams = () => {
   return (
-    <div className="container flex gap-2 px-5 mx-auto">
+    <div className="container flex flex-col md:flex-row gap-2 px-5 mx-auto">
       <div className="border border-black flex-1 text-center p-4">
         <h2 className="uppercase pb-2 text-center border-b border-black text-red-500 text-4xl font-bold italic mb-4">
           CAT EXAM
