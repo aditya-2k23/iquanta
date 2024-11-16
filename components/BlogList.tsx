@@ -60,11 +60,14 @@ const blogPosts: BlogItem[] = [
 
 const BlogList: React.FC = () => {
   return (
-    <div className="">
+    <div className="container mx-auto px-4">
       {blogPosts.map((post, index) => (
-        <div key={index} className="flex flex-col md:flex-row overflow-hidden">
+        <div
+          key={index}
+          className="flex flex-row border-b border-black overflow-hidden py-5 md:py-0"
+        >
           {/* Content Section */}
-          <div className="flex flex-col p-3 md:w-2/3">
+          <div className="flex flex-col p-1 md:p-3 md:w-2/3">
             <h3 className="text-xl leading-6 font-semibold">
               <a
                 href={post.postUrl}
@@ -80,7 +83,7 @@ const BlogList: React.FC = () => {
           <div className="flex-shrink-0 flex items-center justify-center md:w-1/3">
             <a href={post.postUrl} className="block h-full w-full">
               <div
-                className="bg-cover mt-2 bg-center h-16 w-32"
+                className="bg-cover md:mt-2 bg-center h-32 w-48 md:h-16 md:w-32"
                 style={{ backgroundImage: `url(${post.imageUrl})` }}
               ></div>
             </a>
