@@ -1,6 +1,51 @@
 import Image from "next/image";
 import React from "react";
 import "../app/globals.css";
+import RedNewsletterForm from "./RedNewsletterForm";
+
+interface BlogPostProps {
+  title: string;
+  link: string;
+  category: string;
+  categoryLink: string;
+  author: string;
+  authorLink: string;
+  imageUrl: string;
+}
+
+const BlogPost: React.FC<BlogPostProps> = ({
+  title,
+  link,
+  category,
+  categoryLink,
+  author,
+  authorLink,
+  imageUrl,
+}) => {
+  return (
+    <div className="flex flex-col p-3">
+      <div className="w-full mb-4">
+        <a href={link} className="block">
+          <div
+            className="h-52 bg-cover bg-center"
+            style={{ backgroundImage: `url(${imageUrl})` }}
+          />
+        </a>
+      </div>
+      <h3 className="text-xl font-semibold mb-2 hover:text-red-600">
+        <a href={link}>{title}</a>
+      </h3>
+      <div className="text-sm flex flex-col font-semibold justify-center items-center border-b border-black gap-1">
+        <a href={categoryLink} className="text-red-500 uppercase">
+          | {category} |
+        </a>
+        <a href={authorLink} className="text-gray-600 pb-2 hover:text-red-500">
+          {author}
+        </a>
+      </div>
+    </div>
+  );
+};
 
 const LatestPosts = () => {
   const articles = [
@@ -52,26 +97,80 @@ const LatestPosts = () => {
       author: "Indrajeet Singh",
       date: "November 11, 2024",
     },
+    {
+      title: "IIFT Convert Soumyadeep Shares His Preparation Strategy",
+      url: "https://www.iquanta.in/blog/iift-convert-soumyadeep-shares-his-preparation-strategy/",
+      imgUrl:
+        "https://www.iquanta.in/blog/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-15-at-2.57.05-PM-1-696x392.jpeg",
+      category: "CAT & Non-CAT",
+      date: "November 15, 2024",
+    },
+  ];
+
+  const blogData = [
+    {
+      title: "CLAT Mini Mock Series by iQuanta: 14th November 2024",
+      link: "https://www.iquanta.in/blog/clat-mini-mock-series-by-iquanta-13th-november-2024-2/",
+      category: "CLAT Mini Mock Series",
+      categoryLink:
+        "https://www.iquanta.in/blog/category/law/clat/clat-mini-mock-series/",
+      author: "Indrajeet Singh",
+      authorLink: "https://www.iquanta.in/blog/author/administrator/",
+      imageUrl:
+        "https://www.iquanta.in/blog/wp-content/uploads/2024/11/CLAT-Mini-Mock-Series-13-696x392.png",
+    },
+    {
+      title:
+        "How a Small Town Boy Scored CAT 99.76%ile and Converted IIM Bangalore",
+      link: "https://www.iquanta.in/blog/cat-99-76iler-and-converted-iim-bangalore/",
+      category: "CAT & Non-CAT",
+      categoryLink: "https://www.iquanta.in/blog/category/cat-non-cat/",
+      author: "Indrajeet Singh",
+      authorLink: "https://www.iquanta.in/blog/author/administrator/",
+      imageUrl:
+        "https://www.iquanta.in/blog/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-13-at-12.30.26-PM-1-696x392.jpeg",
+    },
+    {
+      title:
+        "Solve 100+ CAT Level Algebra Questions in 10 Hours : Algebra Marathon by iQuanta",
+      link: "https://www.iquanta.in/blog/algebra-marathon-by-iquanta/",
+      category: "CAT & Non-CAT",
+      categoryLink: "https://www.iquanta.in/blog/category/cat-non-cat/",
+      author: "Indrajeet Singh",
+      authorLink: "https://www.iquanta.in/blog/author/administrator/",
+      imageUrl:
+        "https://www.iquanta.in/blog/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-11-at-4.00.01-PM-1-696x392.jpeg",
+    },
+    {
+      title: "IPMAT Registration Details: Fees, Last Date, Eligibility & More",
+      link: "https://www.iquanta.in/blog/ipmat-registration/",
+      category: "IPMAT",
+      categoryLink: "https://www.iquanta.in/blog/category/after-12th/ipmat/",
+      author: "Indrajeet Singh",
+      authorLink: "https://www.iquanta.in/blog/author/administrator/",
+      imageUrl:
+        "https://www.iquanta.in/blog/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-11-at-3.51.03-PM-696x392.jpeg",
+    },
   ];
 
   return (
-    <div className="flex px-8 justify-between mx-auto">
-      <div className="flex gap-[18px] flex-shrink-0 items-start w-[668.5px] h-[1830.34px]">
-        <div id="tdi_102">
+    <div className="flex px-8 gap-5 justify-between mx-auto">
+      <div className="flex gap-[18px] items-start">
+        <div id="tdi_102" className="w-[99%]">
           {articles.map((article, index) => (
-            <div key={index} className="flex pb-[21px] items-center">
-              <div className="flex-shrink-0 flex items-center justify-center md:w-2/3">
+            <div key={index} className="flex border-b border-black pb-[21px] items-center">
+              <div className="flex-shrink-0 flex items-center justify-center">
                 <a href={article.url} target="_blank" rel="noopener noreferrer">
                   <Image
                     src={article.imgUrl}
                     alt={article.title}
-                    width={360}
+                    width={330}
                     height={330}
                     className="mr-1 bg-cover bg-center"
                   />
                 </a>
               </div>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col justify-between ml-2 gap-3">
                 <h3 className="hover:text-red-500 text-2xl font-bold">
                   <a
                     href={article.url}
@@ -82,7 +181,7 @@ const LatestPosts = () => {
                   </a>
                 </h3>
                 <div className="details">
-                  <span className="font-semibold text-red-500 mr-[10px] uppercase">
+                  <span className="font-semibold text-red-500 mr-[10px] hover:text-red-600 cursor-pointer uppercase">
                     | {article.category} |
                   </span>
                   <span className="text-gray-700">{article.date}</span>
@@ -92,11 +191,24 @@ const LatestPosts = () => {
           ))}
         </div>
       </div>
-      <div className="flex-shrink-0 w-[360.58px] h-[1908.95px] border border-red-500 text-center">
-        Hello
+      <div className="flex-shrink-0 border-l border-black border-r w-[360.58px] text-center">
+        <div className="">
+          {blogData.map((post, index) => (
+            <BlogPost
+              key={index}
+              title={post.title}
+              link={post.link}
+              category={post.category}
+              categoryLink={post.categoryLink}
+              author={post.author}
+              authorLink={post.authorLink}
+              imageUrl={post.imageUrl}
+            />
+          ))}
+        </div>
       </div>
-      <div className="flex-shrink-0 w-[285.91px] h-[1248.05px] border border-red-500 text-center">
-        Hello
+      <div className="flex-shrink-0 w-[285.91px]">
+        <RedNewsletterForm />
       </div>
     </div>
   );
