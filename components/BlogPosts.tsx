@@ -1,13 +1,6 @@
 import React from "react";
 
-interface BlogPost {
-  href: string;
-  title: string;
-  category: { href: string; name: string };
-  date: string;
-}
-
-const posts: BlogPost[] = [
+const posts = [
   {
     href: "https://www.iquanta.in/blog/algebra-marathon-by-iquanta/",
     title:
@@ -85,11 +78,14 @@ const posts: BlogPost[] = [
   },
 ];
 
-const BlogPosts: React.FC = () => {
+const BlogPosts = () => {
   return (
-    <div className="w-full flex flex-col">
+    <div className="w-full flex flex-col border-t-2 border-black md:border-none pl-2">
       {posts.map((post, index) => (
-        <div key={index} className="flex pt-2 flex-col overflow-hidden w-full">
+        <div
+          key={index}
+          className="flex mb-1 border-b border-black pt-1 flex-col overflow-hidden w-full"
+        >
           {/* Content */}
           <div className="pl-3 pr-1 mb-1 flex flex-col justify-between flex-grow">
             {/* Title */}
