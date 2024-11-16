@@ -21,7 +21,7 @@ const Article = ({
   authorHref,
 }: ArticleProps) => {
   return (
-    <div className="overflow-hidden hover:shadow-xl max-w-80 transition-shadow duration-300">
+    <div className="overflow-hidden hover:shadow-xl w-full transition-shadow duration-300 border-b border-black">
       {/* Image Section */}
       <div className="relative h-28 sm:h-32 lg:h-52">
         <a href={href} rel="bookmark" title={title}>
@@ -82,9 +82,9 @@ interface BlogPostProps {
 
 const BlogPost = ({ href, imgUrl, title, category, date }: BlogPostProps) => {
   return (
-    <div className="flex items-center justify-center overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <div className="flex flex-col sm:flex-row items-center justify-center overflow-hidden w-full border-b border-black pb-5">
       {/* Image Section */}
-      <div className="relative flex-1 h-32 lg:h-52">
+      <div className="relative w-full sm:w-1/2 h-32 lg:h-52">
         <a href={href} rel="bookmark" title={title}>
           <span
             className="block w-full h-full bg-cover bg-center"
@@ -94,7 +94,7 @@ const BlogPost = ({ href, imgUrl, title, category, date }: BlogPostProps) => {
       </div>
 
       {/* Content Section */}
-      <div className="flex flex-1 flex-col items-center justify-center">
+      <div className="flex flex-1 flex-col items-center justify-center w-full sm:w-1/2">
         <div className="p-5">
           {/* Title */}
           <h3 className="sm:text-2xl font-bold mb-3 hover:text-red-600 transition-colors duration-200">
@@ -128,16 +128,16 @@ const BlogPost = ({ href, imgUrl, title, category, date }: BlogPostProps) => {
 
 const DontMiss = () => {
   return (
-    <div className="container mb-10 mx-auto px-5">
+    <div className="container mb-10 mx-auto px-10">
       {/* Section Title */}
-      <h3 className="py-3 bg-gray-200 italic uppercase font-bold text-3xl sm:text-5xl mb-10 text-center">
+      <h3 className="py-3 bg-gray-200 italic uppercase font-bold text-3xl sm:text-5xl mb-10 text-center mx-5">
         Don&apos;t Miss
       </h3>
 
       {/* Content Wrapper */}
-      <div className="flex flex-col lg:flex-row gap-5 lg:gap-3 justify-around items-start">
+      <div className="flex flex-col lg:flex-row gap-5 lg:gap-3">
         {/* Left Column */}
-        <div className="flex flex-wrap gap-5 lg:w-2/3">
+        <div className="flex-1 grid grid-cols-2 px-5 flex-wrap gap-5">
           <Article
             href="https://www.iquanta.in/blog/top-colleges-accepting-snap-score/"
             imgUrl="https://www.iquanta.in/blog/wp-content/uploads/2023/09/Colleges-Accepting-SNAP-Score-696x392.jpeg"
@@ -187,8 +187,10 @@ const DontMiss = () => {
           />
         </div>
 
+        <div className="border border-black" />
+
         {/* Right Column */}
-        <div className="flex flex-col gap-5 lg:w-2/3">
+        <div className="flex flex-col px-5 flex-1 gap-5">
           <BlogPost
             href="https://www.iquanta.in/blog/cat-2024-2-week-strategy/"
             imgUrl="https://www.iquanta.in/blog/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-11-at-3.37.21-PM-1-696x392.jpeg"
