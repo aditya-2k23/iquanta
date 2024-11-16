@@ -3,9 +3,9 @@ import React from "react";
 
 const HeroSectionCard = () => {
   return (
-    <div className="flex space-x-4 flex-col items-center pb-4">
+    <div className="flex flex-col items-center pb-4 space-y-4 md:space-x-4 md:space-y-0">
       {/* Image Container */}
-      <div className="">
+      <div className="w-full md:w-auto md:mb-8">
         <a
           href="https://www.iquanta.in/blog/iquanta-startup-india/"
           title="iQuanta Recognized Under StartUp India Initiative by Govt. of India"
@@ -16,14 +16,15 @@ const HeroSectionCard = () => {
             alt="Image"
             width={600}
             height={600}
+            className="w-full h-auto"
           />
         </a>
       </div>
 
       {/* Content Section */}
-      <div className="flex mt-2 flex-col justify-between">
+      <div className="flex flex-col justify-between mt-2 md:mt-0 pr-3 pl-0">
         {/* Title */}
-        <h3 className="text-[40px] leading-10 font-bold mb-2 text-gray-800">
+        <h3 className="text-2xl leading-8 font-bold mb-2 text-gray-800 md:text-[40px] md:leading-10">
           <a
             href="https://www.iquanta.in/blog/iquanta-startup-india/"
             rel="bookmark"
@@ -34,10 +35,10 @@ const HeroSectionCard = () => {
         </h3>
 
         {/* Meta Information */}
-        <div className="text-sm flex items-center text-gray-900 space-y-2">
+        <div className="text-sm flex items-center text-gray-900 md:flex-row md:space-y-1 md:space-x-2">
           <a
             href="https://www.iquanta.in/blog/category/iquanta-initiatives/"
-            className="text-red-500 font-semibold uppercase hover:underline mr-1"
+            className="text-red-500 font-semibold uppercase hover:underline"
           >
             <span className="mx-1">|</span>
             iQuanta Initiatives
@@ -56,7 +57,7 @@ const HeroSectionCard = () => {
         </div>
 
         {/* Excerpt */}
-        <p className="text-gray-900 text-lg mt-2">
+        <p className="text-gray-900 text-base mt-2 md:text-lg md:leading-6 font-serif">
           iQuanta Recognized Under StartUp India Initiative by Govt. of India
           With immense pleasure, we would like to let you all know that iQuanta
           has been...
