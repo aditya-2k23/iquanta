@@ -35,7 +35,7 @@ const Article = ({
       {/* Content Section */}
       <div className="p-5 text-center">
         {/* Title */}
-        <h3 className="text-lg sm:text-xl font-bold mb-3 hover:text-red-600 transition-colors leading-4 duration-200">
+        <h3 className="text-lg sm:text-xl font-bold mb-2 md:mb-3 hover:text-red-600 transition-colors leading-[22px] md:leading-6 duration-200">
           <a href={href} rel="bookmark" title={title}>
             {title}
           </a>
@@ -95,15 +95,15 @@ const BlogPost = ({ href, imgUrl, title, category, date }: BlogPostProps) => {
 
       {/* Content Section */}
       <div className="flex flex-1 flex-col items-center justify-center w-full sm:w-1/2">
-        <div className="p-5">
+        <div className="md:p-5 p-2">
           {/* Title */}
-          <h3 className="sm:text-2xl font-bold mb-3 hover:text-red-600 transition-colors duration-200">
+          <h3 className="sm:text-2xl font-bold mb-1 md:mb-3 leading-5 hover:text-red-600 transition-colors duration-200">
             <a href={href} rel="bookmark" title={title}>
               {title}
             </a>
           </h3>
           {/* Category, Author, and Date */}
-          <div className="text-gray-500 text-sm flex flex-col sm:flex-row sm:items-center">
+          <div className="text-gray-500 text-sm flex flex-row items-center">
             {/* Category */}
             <a
               href={category.href}
@@ -113,8 +113,8 @@ const BlogPost = ({ href, imgUrl, title, category, date }: BlogPostProps) => {
               {category.name}
               <span className="mx-1">|</span>
             </a>
-            {/* Author and Date */}
-            <div className="flex items-center ml-2 mt-2 sm:mt-0">
+            {/* Date */}
+            <div className="flex items-center ml-2 sm:mt-0">
               <time dateTime={date} className="text-gray-700">
                 {new Date(date).toDateString()}
               </time>
