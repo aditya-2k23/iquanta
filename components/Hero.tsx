@@ -106,10 +106,10 @@ const Hero = () => {
   ];
 
   return (
-    <section className="bg-gray-100 border-t mt-16 border-black px-10 py-12">
+    <section className="bg-gray-100 border-t mt-16 border-black px-4 md:px-10 py-12">
       <div className="container mx-auto px-4 mt-8">
         {/* Original Articles */}
-        <div className="grid md:grid-cols-3 gap-8 cursor-pointer">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 cursor-pointer">
           {articles.map((article, index) => (
             <div
               key={index}
@@ -117,33 +117,35 @@ const Hero = () => {
             >
               <a href={article.link} target="_blank" rel="noopener noreferrer">
                 <div
-                  className="h-72 w-full bg-cover bg-center"
+                  className="h-48 sm:h-72 w-full bg-cover bg-center"
                   style={{ backgroundImage: `url(${article.imageUrl})` }}
                 ></div>
               </a>
-              <div className="p-6 text-center">
+              <div className="p-5 text-center">
                 <a
                   href={article.link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <h3 className="text-2xl font-semibold mb-3 hover:text-red-600 transition-colors">
+                  <h3 className="text-xl sm:text-3xl font-semibold mb-2 hover:text-red-600 transition-colors">
                     {article.title}
                   </h3>
                 </a>
-                <div className="text-gray-600 mb-4">
-                  <span className="font-medium text-red-600">
+                <div className="text-gray-600 mb-2">
+                  <span className="font-semibold text-red-600">
                     | {article.category} |
                   </span>
                 </div>
-                <p className="text-gray-700">{article.excerpt}</p>
+                <p className="text-gray-800 text-sm md:text-base font-serif leading-4">
+                  {article.excerpt}
+                </p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Additional Articles */}
-        <div className="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {additionalArticles.map((item, index) => (
             <div
               key={index}
@@ -162,15 +164,15 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   className="block"
                 >
-                  <h3 className="text-lg font-bold mb-2 hover:text-red-600">
+                  <h3 className="text-xl leading-5 font-bold mb-2 hover:text-red-600">
                     {item.title}
                   </h3>
                 </a>
                 <div className="flex justify-center gap-2 text-sm text-gray-700">
-                  <span className="font-medium text-red-600">
+                  <span className="font-semibold text-red-600">
                     | {item.category} |
                   </span>
-                  <span>{item.author}</span>
+                  <span className="text-gray-800">{item.author}</span>
                 </div>
               </div>
             </div>
@@ -179,7 +181,7 @@ const Hero = () => {
       </div>
 
       {/* Top Posts */}
-      <div className="flex mt-8">
+      <div className="flex flex-col lg:flex-row mt-8">
         <div className="container flex-shrink flex-1 mx-auto px-4">
           <h2 className="text-2xl bg-red-500 p-3 italic text-white font-extrabold uppercase text-center mb-2">
             Top 5 This Week
@@ -193,10 +195,10 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flex-1">
+        <div className="flex-1 mt-8 lg:mt-0">
           <HeroSectionCard />
         </div>
-        <div className="flex-1 flex-shrink">
+        <div className="flex-1 flex-shrink mt-8 lg:mt-0">
           <BlogPosts />
         </div>
       </div>
