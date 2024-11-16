@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 const NavItem = ({
@@ -11,7 +11,7 @@ const NavItem = ({
   subMenuArr: string[];
 }) => {
   return (
-    <li className="menu-item">
+    <li className="menu-item group">
       <a href={link} className="flex items-center">
         {title}&nbsp;
         <svg
@@ -26,9 +26,10 @@ const NavItem = ({
           />
         </svg>
       </a>
-      <ul className="submenu">
+      {/* Submenu */}
+      <ul className="submenu hidden group-hover:block bg-white shadow-lg absolute w-full rounded-md">
         {subMenuArr.map((subMenu) => (
-          <li key={subMenu} className="p-2">
+          <li key={subMenu} className="p-1 pl-0 hover:bg-gray-100">
             <a className="subMenu-links" href={subMenu}>
               {subMenu}
             </a>
@@ -40,8 +41,14 @@ const NavItem = ({
 };
 
 const Navbar = ({ children }: { children: React.ReactNode }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div className="flex items-center pl-32">
+    <div className="flex items-center md:justify-start justify-between pl-5 pr-5 lg:pl-32 lg:pr-10">
       {/* Logo Section */}
       <div className="logo-container">
         <a href="https://www.iquanta.in/blog/">
@@ -55,9 +62,51 @@ const Navbar = ({ children }: { children: React.ReactNode }) => {
         </a>
       </div>
 
+      {/* Mobile Menu Button */}
+      <button
+        className="lg:hidden p-2 rounded-md hover:bg-gray-200 focus:outline-none"
+        onClick={toggleMenu}
+      >
+        {isMenuOpen ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6h16.5M3.75 12h16.5M3.75 18h16.5"
+            />
+          </svg>
+        )}
+      </button>
+
       {/* Navigation Menu */}
-      <nav className="flex gap-10 items-center">
-        <ul className="list-none flex gap-10">
+      <nav
+        className={`${
+          isMenuOpen ? "block" : "hidden"
+        } lg:flex relative lg:gap-10 items-center bg-white p-5`}
+      >
+        <ul className="list-none flex flex-col lg:flex-row gap-5 lg:gap-10">
           <NavItem
             title="CAT & Non-CAT"
             link="https://www.iquanta.in/blog/"
